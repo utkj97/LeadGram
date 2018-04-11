@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "LeadGram",
+  "version": "1.0",
+  "icons":{
+    "128":"./icons/i128.png" ,
+    "64": "./icons/i64.png" ,
+    "16":"./icons/i16.png"
+  },
+  "page_action":{
+    "default_popup":"popup.html" ,
+    "default_title": "LeadGram",
+    "default_icon":"./icons/i16.png"
+  },
+  "background":{
+    "scripts":["jquery-3.3.1.min.js","./background_scripts/background.js"],
+    "persistent": false
+  },
+  "content_scripts":[
+    {
+      "matches":["https://www.linkedin.com/*"],
+      "js": ["jquery-3.3.1.min.js", "./content_scripts/content.js"],
+      "css": ["./content_scripts/content.css"]
+    }
+  ],
+  "permissions":[
+    "tabs",
+    "https://www.linkedin.com/*"
+  ]
+
+}
