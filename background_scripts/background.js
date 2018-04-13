@@ -60,7 +60,6 @@ var getEmailData = function(full_name, comp_domain, respond){
       console.log(JSON.stringify(output));
       respond(output);
     },
-    crossDomain: true,
     error: function(xhr, status, err){
       respond({error_mssg: 'Error occured'});
     },
